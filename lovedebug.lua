@@ -721,7 +721,7 @@ _G["love"].run = function()
 			end
 			if _Debug.drawOverlay then
 				for key, d in pairs(_Debug.trackKeys) do
-					if type(key) == 'string' then
+					if type(key) == 'string' and key ~= " " then
 						if love.keyboard.isDown(key:lower()) then
 							d.time = d.time + dt
 							if d.time >= _Debug.keyRepeatInterval then
